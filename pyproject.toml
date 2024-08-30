@@ -1,6 +1,6 @@
 [project]
 name = "alicebot-plugin-template" # TODO
-version = "0.1.0" # TODO
+version = "0.1.10" # TODO
 description = "AliceBot Plugin Template." # TODO
 authors = [{ name = "AliceBot", email = "concontact@alicebot.dev" }] # TODO
 license = { text = "MIT" } # TODO
@@ -16,11 +16,8 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Topic :: Communications :: Chat",
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = ["alicebot>=0.10.0"]
-
-[tool.pdm.dev-dependencies]
-lint = ["ruff"]
 
 [project.urls]
 Homepage = "https://docs.alicebot.dev/"                                    # TODO
@@ -30,7 +27,7 @@ Changelog = "https://docs.alicebot.dev/changelog.html"                     # TOD
 
 [tool.ruff]
 line-length = 88
-target-version = "py38"
+target-version = "py39"
 
 [tool.ruff.lint]
 select = ["ALL"]
@@ -42,7 +39,6 @@ ignore = [
     "EM",     # flake8-errmsg
     "ISC",    # flake8-implicit-str-concat
     "INP",    # flake8-no-pep420
-    "TID",    # flake8-tidy-imports
     "E501",   # Line too long, handled by formatter
     "ANN101", # Missing type annotation for self
     "ANN102", # Missing type annotation for cls
@@ -58,11 +54,11 @@ convention = "google"
 keep-runtime-typing = true
 
 [tool.pyright]
-pythonVersion = "3.8"
+pythonVersion = "3.9"
 pythonPlatform = "All"
 typeCheckingMode = "strict"
 reportUnnecessaryIsInstance = false
 
 [build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
